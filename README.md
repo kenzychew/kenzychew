@@ -6,7 +6,7 @@
 
 I'm Kenzy Chew, a Web Developer based in Singapore.
 
-[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=globe&logoColor=fff)](https://kenzychew.vercel.app.com)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=globe&logoColor=fff)](https://kenzychew.vercel.app)
 
 ## 🛠️ Tech Stack
 
