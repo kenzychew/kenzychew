@@ -27,3 +27,8 @@ I'm Kenzy Chew, a Web Developer based in Singapore.
 ![Kenzy's GitHub stats](https://github-readme-stats.vercel.app/api?username=kenzychew&show_icons=true&theme=radical)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kenzychew&layout=compact&theme=radical)
+
+## 🔗 Connect with Me
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=fff)](https://www.linkedin.com/in/kenzychew)
+[![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?logo=twitter&logoColor=fff)](https://twitter.com/kenzychew)
