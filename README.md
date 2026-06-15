@@ -30,6 +30,16 @@ An AI Engineer based in Singapore. I work mostly on the deployment side - buildi
 
 ## Featured Projects
 
+### Cineloops - image to video, bring your own key
+
+![Status](https://img.shields.io/badge/status-in%20progress-FACC15?style=flat-square)
+
+Animate a still image: upload a photo, mark the region you want to move, and bring your own Replicate key to generate the video. Each stage of the pipeline streams to the UI as it runs - captioning, prompt refinement, generation, and quality checks. Your key never leaves the browser. Work in progress.
+
+`Next.js` `FastAPI` `Cloud Run` `Replicate` `Cloudflare R2` `SSE`
+
+[Live demo](https://cineloops.vercel.app/)
+
 ### gofetch - RAG pipeline, built from scratch
 
 A RAG pipeline with no orchestration framework. Hybrid search (BM25 + dense vectors via pgvector), cross-encoder re-ranking, a knowledge graph, and streaming answers with inline citations, served over FastAPI.
@@ -78,6 +88,7 @@ Real-time object detection with YOLOv8, accelerated on CUDA.
 
 ![Azure](https://img.shields.io/badge/-Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![Cloudflare R2](https://img.shields.io/badge/-Cloudflare%20R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 
 **Tooling**
 
@@ -88,6 +99,7 @@ Real-time object detection with YOLOv8, accelerated on CUDA.
 
 **Frontend**
 
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38BDF8?style=flat-square&logo=tailwind-css&logoColor=white)
 
