@@ -29,11 +29,11 @@ An AI Engineer based in Singapore. I work mostly on the deployment side - buildi
 
 ## Featured Projects
 
-### Cineloops - image to video, bring your own key
+### Cineloops - still photo to cinemagraph, bring your own key
 
 ![Status](https://img.shields.io/badge/status-in%20progress-FACC15?style=flat-square)
 
-Animate a still image: upload a photo, mark the region you want to move, and bring your own Replicate key to generate the video. Each stage of the pipeline streams to the UI as it runs - captioning, prompt refinement, generation, and quality checks. Your key never leaves the browser. Work in progress.
+Turn a still photo into a cinemagraph - a short looping clip where one part of the frame moves while the rest stays frozen. Upload a photo, mark the region you want to animate, and bring your own Replicate key to generate it. Each stage of the pipeline streams to the UI as it runs - captioning, prompt refinement, generation, and quality checks. Your key never leaves the browser. Work in progress.
 
 `Next.js` `FastAPI` `Cloud Run` `Replicate` `Cloudflare R2` `SSE`
 
