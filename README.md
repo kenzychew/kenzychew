@@ -39,21 +39,46 @@ Turn a still photo into a cinemagraph - a short looping clip where one part of t
 
 [Live demo](https://cineloops.vercel.app/)
 
+### GotParking - forecasting carpark availability, not just reporting it
+
+Singapore's open data tells you how many lots are free right now, and that number is stale by the time you arrive.
+GotParking predicts the count 20 minutes ahead for 268 carparks.
+No public historical dataset exists, so the system builds its own: a Cloudflare Workers cron polls LTA DataMall every 5 minutes, feeding a weekly LightGBM retrain that pretrains on NTU's SINPA dataset and fine-tunes on live data.
+A candidate only ships if it beats both the historical average and persistence on a live holdout - the first promoted model cut MAE to 16.6 lots against persistence's 21.4.
+The model is deliberately the smallest part; the work is collecting the data and never showing a number the system cannot back.
+
+`Python` `TypeScript` `LightGBM` `Cloudflare Workers` `Vercel` `Supabase` `GitHub Actions`
+
+[Live demo](https://gotparking.vercel.app) | [View repo](https://github.com/kenzychew/GotParking)
+
+### RocketML - experiment to deployment, the reusable parts
+
+A self-service platform for serving NLP text classifiers as a containerised, monitored, Kubernetes-deployed inference API.
+Bring a trained model and it gets a FastAPI endpoint, a slim non-root image, MLflow tracking and registration, Prometheus metrics, and a Helm chart onto a cluster - with CI running lint, tests, train, build, and push to GHCR on every merge to main.
+The reusable machinery is the deliverable; the sentiment model it ships with is just there to show it working.
+
+`Python` `FastAPI` `Docker` `Kubernetes` `Helm` `MLflow` `Prometheus` `Grafana` `GitHub Actions`
+
+[Live demo](https://huggingface.co/spaces/knzychw/rocketml-sentiment) | [View repo](https://github.com/kenzychew/RocketML)
+
+### Document Extraction Agent - LLM extraction that checks its own arithmetic
+
+Drop invoices and receipts into a folder.
+The agent extracts structured fields with an LLM, cross-checks the arithmetic, auto-accepts only what reconciles, and routes everything else to human review - running unattended, treating the model as fallible by design.
+On a 100-document held-out SROIE slice, every auto-accepted total was correct (18/18); the one wrong total failed a line-item check and went to review instead of being written.
+
+`Python` `Gemini` `Gradio` `SQLite`
+
+[Live demo](https://huggingface.co/spaces/knzychw/document-extract-agent) | [View repo](https://github.com/kenzychew/document-extract-agent)
+
 ### gofetch - RAG pipeline, built from scratch
 
-A RAG pipeline with no orchestration framework. Hybrid search (BM25 + dense vectors via pgvector), cross-encoder re-ranking, a knowledge graph, and streaming answers with inline citations, served over FastAPI.
+A RAG pipeline with no orchestration framework.
+Hybrid search (BM25 + dense vectors via pgvector), cross-encoder re-ranking, a knowledge graph, and streaming answers with inline citations, served over FastAPI.
 
 `Python` `FastAPI` `pgvector` `BM25` `cross-encoder`
 
 [View repo](https://github.com/kenzychew/gofetch)
-
-### YOLOv8 - real-time object detection
-
-Real-time object detection with YOLOv8, accelerated on CUDA.
-
-`Python` `YOLOv8` `CUDA`
-
-[View repo](https://github.com/kenzychew/YOLOv8)
 
 ## Tech Stack
 
@@ -68,11 +93,14 @@ Real-time object detection with YOLOv8, accelerated on CUDA.
 
 ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/-scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![LightGBM](https://img.shields.io/badge/-LightGBM-9ACD32?style=flat-square)
 ![Hugging Face](https://img.shields.io/badge/-Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![Gemini](https://img.shields.io/badge/-Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 ![pandas](https://img.shields.io/badge/-pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/-Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
+![Gradio](https://img.shields.io/badge/-Gradio-F97316?style=flat-square&logo=gradio&logoColor=white)
 ![ComfyUI](https://img.shields.io/badge/-ComfyUI-1A1A1A?style=flat-square)
 
 **Backend and Data**
@@ -81,17 +109,26 @@ Real-time object detection with YOLOv8, accelerated on CUDA.
 ![Node.js](https://img.shields.io/badge/-Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![pgvector](https://img.shields.io/badge/-pgvector-4169E1?style=flat-square)
+![Supabase](https://img.shields.io/badge/-Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 
 **Cloud**
 
 ![Azure](https://img.shields.io/badge/-Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/-Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/-Cloudflare%20Workers-F38020?style=flat-square&logo=cloudflareworkers&logoColor=white)
 ![Cloudflare R2](https://img.shields.io/badge/-Cloudflare%20R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 
 **Tooling**
 
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Helm](https://img.shields.io/badge/-Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
+![MLflow](https://img.shields.io/badge/-MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white)
+![Prometheus](https://img.shields.io/badge/-Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/-Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![GitLab CI](https://img.shields.io/badge/-GitLab%20CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
