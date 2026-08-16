@@ -65,7 +65,7 @@ The reusable machinery is the deliverable; the sentiment model it ships with is 
 
 Drop invoices and receipts into a folder.
 The agent extracts structured fields with an LLM, cross-checks the arithmetic, auto-accepts only what reconciles, and routes everything else to human review - running unattended, treating the model as fallible by design.
-On a 261-document held-out SROIE slice, 94 documents (36%) were auto-accepted and 92 of those totals were correct - 97.9% precision on the accepted path, with both misses one-cent rounding differences; everything else was routed to human review instead of being written unread.
+On a 261-document held-out SROIE slice, 94 documents (36%) were auto-accepted and 92 of those totals were correct - 97.9% precision on the accepted path. One miss was a one-cent rounding difference; the other was a 45-cent gap traced to a gold-label ambiguity between the pre-tax subtotal and the cash-rounded total. Everything else was routed to human review instead of being written unread.
 
 `Python` `Gemini` `Gradio` `SQLite`
 
