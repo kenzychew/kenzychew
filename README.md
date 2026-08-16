@@ -37,9 +37,9 @@ Turn a still photo into a cinemagraph - a short looping clip where one part of t
 
 `Next.js` `FastAPI` `Cloud Run` `Replicate` `Cloudflare R2` `SSE`
 
-[Live demo](https://cineloops.vercel.app/)
+[Live](https://cineloops.vercel.app/)
 
-### GotParking - forecasting carpark availability, not just reporting it
+### GotParking - forecasting carpark availability
 
 Singapore's open data tells you how many lots are free right now, and that number is stale by the time you arrive.
 GotParking predicts the count 20 minutes ahead for 268 carparks.
@@ -49,7 +49,7 @@ The model is deliberately the smallest part; the work is collecting the data and
 
 `Python` `TypeScript` `LightGBM` `Cloudflare Workers` `Vercel` `Supabase` `GitHub Actions`
 
-[Live demo](https://parking.kenzychew.com) | [View repo](https://github.com/kenzychew/GotParking)
+[Live](https://parking.kenzychew.com) | [View repo](https://github.com/kenzychew/GotParking)
 
 ### RocketML - experiment to deployment, the reusable parts
 
@@ -59,7 +59,7 @@ The reusable machinery is the deliverable; the sentiment model it ships with is 
 
 `Python` `FastAPI` `Docker` `Kubernetes` `Helm` `MLflow` `Prometheus` `Grafana` `GitHub Actions`
 
-[Live demo](https://rocket.kenzychew.com) | [View repo](https://github.com/kenzychew/RocketML)
+[Live](https://rocket.kenzychew.com) | [View repo](https://github.com/kenzychew/RocketML)
 
 ### DocExtract - LLM extraction that checks its own arithmetic
 
@@ -69,7 +69,7 @@ On a 261-document held-out SROIE slice, 94 documents (36%) were auto-accepted an
 
 `Python` `Gemini` `Gradio` `SQLite`
 
-[Live demo](https://document.kenzychew.com) | [View repo](https://github.com/kenzychew/DocExtract)
+[Live](https://document.kenzychew.com) | [View repo](https://github.com/kenzychew/DocExtract)
 
 ### gofetch - RAG pipeline, built from scratch
 
@@ -78,7 +78,7 @@ Hybrid search (BM25 + dense vectors via pgvector), cross-encoder re-ranking, a k
 
 `Python` `FastAPI` `pgvector` `BM25` `cross-encoder`
 
-[Live demo](https://fetch.kenzychew.com) | [View repo](https://github.com/kenzychew/gofetch)
+[Live](https://fetch.kenzychew.com) | [View repo](https://github.com/kenzychew/gofetch)
 
 ## Tech Stack
 
