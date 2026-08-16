@@ -49,7 +49,7 @@ The model is deliberately the smallest part; the work is collecting the data and
 
 `Python` `TypeScript` `LightGBM` `Cloudflare Workers` `Vercel` `Supabase` `GitHub Actions`
 
-[Live demo](https://gotparking.vercel.app) | [View repo](https://github.com/kenzychew/GotParking)
+[Live demo](https://parking.kenzychew.com) | [View repo](https://github.com/kenzychew/GotParking)
 
 ### RocketML - experiment to deployment, the reusable parts
 
@@ -59,17 +59,17 @@ The reusable machinery is the deliverable; the sentiment model it ships with is 
 
 `Python` `FastAPI` `Docker` `Kubernetes` `Helm` `MLflow` `Prometheus` `Grafana` `GitHub Actions`
 
-[Live demo](https://huggingface.co/spaces/knzychw/rocketml-sentiment) | [View repo](https://github.com/kenzychew/RocketML)
+[Live demo](https://rocket.kenzychew.com) | [View repo](https://github.com/kenzychew/RocketML)
 
-### Document Extraction Agent - LLM extraction that checks its own arithmetic
+### DocExtract - LLM extraction that checks its own arithmetic
 
 Drop invoices and receipts into a folder.
 The agent extracts structured fields with an LLM, cross-checks the arithmetic, auto-accepts only what reconciles, and routes everything else to human review - running unattended, treating the model as fallible by design.
-On a 100-document held-out SROIE slice, every auto-accepted total was correct (18/18); the one wrong total failed a line-item check and went to review instead of being written.
+On a 261-document held-out SROIE slice, 94 documents (36%) were auto-accepted and 92 of those totals were correct - 97.9% precision on the accepted path. One miss was a one-cent rounding difference; the other was a 45-cent total that passed every validation rule with no signal in the pipeline distinguishing it from the accepts it shipped alongside - an open, unexplained anomaly, not a rounding difference. Everything else was routed to human review instead of being written unread.
 
 `Python` `Gemini` `Gradio` `SQLite`
 
-[Live demo](https://huggingface.co/spaces/knzychw/document-extract-agent) | [View repo](https://github.com/kenzychew/document-extract-agent)
+[Live demo](https://document.kenzychew.com) | [View repo](https://github.com/kenzychew/DocExtract)
 
 ### gofetch - RAG pipeline, built from scratch
 
@@ -78,7 +78,7 @@ Hybrid search (BM25 + dense vectors via pgvector), cross-encoder re-ranking, a k
 
 `Python` `FastAPI` `pgvector` `BM25` `cross-encoder`
 
-[View repo](https://github.com/kenzychew/gofetch)
+[Live demo](https://fetch.kenzychew.com) | [View repo](https://github.com/kenzychew/gofetch)
 
 ## Tech Stack
 
